@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Fact from "./Fact";
 
 const Question = () => {
     const [displayFact, setDisplayFact] = useState(false);
@@ -14,8 +15,8 @@ const Question = () => {
     return (
         <div>
             <p>Would you like to know a fact about cats?</p>
-            <button onClick = {showFact}>YES</button>
-            <button onClick = {dontShowFact}>NO</button>
+            {!displayFact && <button onClick = {showFact}>YES</button>}
+            {displayFact && <button onClick = {dontShowFact}>NO</button>}
         </div>
 
     );
